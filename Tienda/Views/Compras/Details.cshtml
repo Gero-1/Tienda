@@ -1,0 +1,50 @@
+﻿@model Tienda.Models.Compra
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Detalles de la Compra</h4>
+    <hr />
+    <dl class="row">
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">Detalles de la Compra</h2>
+            <dl class="row border p-4 rounded" style="background-color: #F3F4F6;">
+                <dt class="col-sm-2 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cantidad)
+                </dd>
+
+                <dt class="col-sm-2 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.FechaCompra)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FechaCompra)
+                </dd>
+
+                <dt class="col-sm-2 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.IdClienteNavigation)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IdClienteNavigation.Documento)
+                </dd>
+
+                <dt class="col-sm-2 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.IdProductoNavigation)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IdProductoNavigation.Id)
+                </dd>
+            </dl>
+
+            <div class="text-center mt-4">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+                <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+            </div>
+        </div>
